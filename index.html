@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey Entry</title>
+</head>
+<body>
+<h1>Welcome to the Survey</h1>
+<div id="formContainer"></div> <!-- Container where the form will load -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var forms = [
+      "https://docs.google.com/forms/d/e/1suhIJBevqvjP9K0LZws0EGtzTCA7s9ntnmSQ7_aqvcg/viewform?embedded=true",
+      "https://docs.google.com/forms/d/e/1DJ700RWGacmCngujWr2NcV01tp3b8fJSyHwZmT53pD8/viewform?embedded=true"
+    ];
+
+    var randomIndex = Math.floor(Math.random() * forms.length); // Randomly pick 0 or 1
+    var formUrl = forms[randomIndex];
+
+    var iframe = document.createElement('iframe');
+    iframe.src = formUrl;
+    iframe.width = "700"; // Set the width as needed
+    iframe.height = "520"; // Set the height as needed
+    iframe.frameborder = "0";
+    iframe.marginheight = "0";
+    iframe.marginwidth = "0";
+    document.getElementById('formContainer').appendChild(iframe);
+  });
+</script>
+</body>
+</html>
